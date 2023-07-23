@@ -1,15 +1,15 @@
 import { Controller, Get, Post, Param, Body, Delete, } from "@nestjs/common";
 import { Test } from './schemas/test.schema'
 import { TestService } from './test.service'
-import { CreateCatDto } from "./dto/create-cat.dto";
+import { CreateUserDto } from "./dto/create-user.dto";
 
 @Controller("test")
 export class TestController{
     constructor(private readonly testService: TestService) {}
 
   @Post()
-  async create(@Body() createCatDto: CreateCatDto) {
-    await this.testService.create(createCatDto);
+  async create(@Body() createUserDto: CreateUserDto) {
+    await this.testService.create(createUserDto);
   }
 
   @Get()
@@ -26,5 +26,4 @@ export class TestController{
   async delete(@Param('id') id: string) {
     return this.testService.delete(id);
   }
-    
 }

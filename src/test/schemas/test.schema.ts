@@ -5,10 +5,10 @@ export type TestDocument = HydratedDocument<Test>;
 
 @Schema()
 export class Test {
-    @Prop()
+    @Prop({required: true})
     name: string;
 
-    @Prop()
+    @Prop({required: true})
     email: string;
 
     @Prop({ required: true})
