@@ -3,6 +3,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { TestModule } from './test/test.module';
 //test
 @Module({
-  imports: [MongooseModule.forRoot('mongodb+srv://adm-jonte:<passwrd>@atlascluster.qnebpqi.mongodb.net/'), TestModule],
+  imports: [MongooseModule.forRoot('mongodb+srv://adm-jonte:<pass>@atlascluster.qnebpqi.mongodb.net/'), TestModule],
 })
 export class AppModule {}
