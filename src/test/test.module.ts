@@ -3,11 +3,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { TestController } from './test.controller';
 import { TestService } from './test.service';
 import { Test, TestSchema} from './schemas/test.schema';
-import { WebsocketGateway } from './websocket.gateway';
-
+import { HttpModule } from '@nestjs/axios';
 @Module({
-  imports: [MongooseModule.forFeature([{ name: Test.name, schema: TestSchema}])],
+  imports: [MongooseModule.forFeature([{ name: Test.name, schema: TestSchema}]), HttpModule],
   controllers: [TestController],
-  providers: [TestService, WebsocketGateway]
+  providers: [TestService]
 })
 export class TestModule {}
